@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Soundwave — a responsive music streaming UI concept built with HTML, CSS and JavaScript." />
+  <title>Soundwave — Music for every mood</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#home" aria-label="Soundwave home"><span class="brand-mark"><i></i><i></i><i></i></span><span>soundwave</span></a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a class="nav-link active" href="#home"><span class="nav-icon">⌂</span> Home</a>
+        <a class="nav-link" href="#search"><span class="nav-icon">⌕</span> Search</a>
+        <a class="nav-link" href="#library"><span class="nav-icon">▤</span> Your Library</a>
+      </nav>
+      <div class="sidebar-heading"><span>YOUR COLLECTION</span><button class="icon-button" id="createPlaylist" aria-label="Create playlist">＋</button></div>
+      <div class="collection-list" id="collectionList">
+        <button class="collection-item"><span class="collection-cover liked-cover">♥</span><span><b>Liked Songs</b><small>Playlist · 28 songs</small></span></button>
+        <button class="collection-item"><span class="collection-cover mix-cover">✦</span><span><b>Daily Mix 01</b><small>Made for you</small></span></button>
+        <button class="collection-item"><span class="collection-cover chill-cover">☾</span><span><b>Late Night Vibes</b><small>Playlist · 42 songs</small></span></button>
+        <button class="collection-item"><span class="collection-cover focus-cover">◉</span><span><b>Deep Focus</b><small>Playlist · 36 songs</small></span></button>
+      </div>
+      <div class="sidebar-bottom"><div class="upgrade-card"><span class="upgrade-icon">✦</span><b>Your sound, upgraded.</b><p>Make every moment sound better.</p><button id="upgradeButton">Explore Premium</button></div><div class="profile-mini"><div class="avatar">HK</div><span><b>Hannan</b><small>Free account</small></span><span class="more-dots">···</span></div></div>
+    </aside>
+
+    <main class="main-content" id="home">
+      <header class="topbar"><div class="history-controls"><button class="circle-button" id="backButton" aria-label="Go back">‹</button><button class="circle-button" id="forwardButton" aria-label="Go forward">›</button></div><div class="mobile-brand"><span class="brand-mark"><i></i><i></i><i></i></span> soundwave</div><div class="topbar-actions"><button class="text-button" id="installButton">Install App</button><button class="profile-button"><span class="avatar small-avatar">HK</span><span>Hannan</span><span class="chevron">⌄</span></button></div></header>
+      <section class="greeting-section"><p class="eyebrow">THURSDAY, OCTOBER 16</p><h1>Good afternoon<span class="greeting-dot">.</span></h1><p class="greeting-subtitle">A little music can change everything.</p>
+        <div class="quick-grid" id="quickGrid">
+          <button class="quick-card" data-play="Midnight City"><img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=160&q=80" alt="Purple night sky"/><span>Midnight City</span><span class="quick-play">▶</span></button>
+          <button class="quick-card" data-play="Golden Hour"><img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=160&q=80" alt="Golden sunset"/><span>Golden Hour</span><span class="quick-play">▶</span></button>
+          <button class="quick-card" data-play="Focus Flow"><img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=160&q=80" alt="Ocean waves"/><span>Focus Flow</span><span class="quick-play">▶</span></button>
+          <button class="quick-card" data-play="After Hours"><img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=160&q=80" alt="Night lights"/><span>After Hours</span><span class="quick-play">▶</span></button>
+          <button class="quick-card hide-small" data-play="Soft Reset"><img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=160&q=80" alt="Mountain lake"/><span>Soft Reset</span><span class="quick-play">▶</span></button>
+          <button class="quick-card hide-small" data-play="Indie Radar"><img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=160&q=80" alt="Live music"/><span>Indie Radar</span><span class="quick-play">▶</span></button>
+        </div>
+      </section>
+      <section class="content-section" id="search"><div class="section-heading"><div><p class="eyebrow">MADE FOR YOUR DAY</p><h2>Made for you</h2></div><button class="see-all" data-see-all="mixes">See all <span>↗</span></button></div><div class="album-grid" id="madeForYou">
+        <article class="album-card" data-play="The Daily Lift"><div class="album-art art-lift"><span class="art-label">THE<br/>DAILY<br/><em>LIFT</em></span><span class="art-sun"></span></div><b>The Daily Lift</b><p>Your daily dose of good energy.</p><button class="card-play" aria-label="Play The Daily Lift">▶</button></article>
+        <article class="album-card" data-play="Bedroom Pop"><div class="album-art art-pop"><span class="pop-orb"></span><span class="art-label">bedroom<br/><em>pop.</em></span></div><b>Bedroom Pop</b><p>Easygoing sounds for slow days.</p><button class="card-play" aria-label="Play Bedroom Pop">▶</button></article>
+        <article class="album-card" data-play="Focus Flow"><div class="album-art art-focus"><span class="focus-ring"></span><span class="art-label">FOCUS<br/><em>FLOW</em></span></div><b>Focus Flow</b><p>Find your zone and stay there.</p><button class="card-play" aria-label="Play Focus Flow">▶</button></article>
+        <article class="album-card" data-play="After Hours"><div class="album-art art-hours"><span class="hours-moon">☾</span><span class="art-label">AFTER<br/><em>HOURS</em></span></div><b>After Hours</b><p>For when the city slows down.</p><button class="card-play" aria-label="Play After Hours">▶</button></article>
+        <article class="album-card hide-medium" data-play="Indie Radar"><div class="album-art art-indie"><span class="art-label">INDIE<br/><em>RADAR</em></span><span class="indie-star">✳</span></div><b>Indie Radar</b><p>Fresh finds from the underground.</p><button class="card-play" aria-label="Play Indie Radar">▶</button></article>
+      </div></section>
+      <section class="content-section" id="library"><div class="section-heading"><div><p class="eyebrow">FRESH FINDS</p><h2>Trending this week</h2></div><button class="see-all" data-see-all="trending">See all <span>↗</span></button></div><div class="track-list" id="trackList">
+        <button class="track-row" data-play="Blue Skies"><span class="track-number">01</span><img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=100&q=80" alt="Blue sky artwork"/><span class="track-meta"><b>Blue Skies</b><small>Nova Lane</small></span><span class="track-tag">CHILL</span><span class="track-duration">3:24</span><span class="track-play">▶</span></button>
+        <button class="track-row" data-play="Electric Dreams"><span class="track-number">02</span><img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=100&q=80" alt="Neon night artwork"/><span class="track-meta"><b>Electric Dreams</b><small>Velvet Echo</small></span><span class="track-tag tag-new">NEW</span><span class="track-duration">2:58</span><span class="track-play">▶</span></button>
+        <button class="track-row" data-play="Somewhere, Slowly"><span class="track-number">03</span><img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=100&q=80" alt="Lake and mountains artwork"/><span class="track-meta"><b>Somewhere, Slowly</b><small>June Wilder</small></span><span class="track-tag">INDIE</span><span class="track-duration">4:12</span><span class="track-play">▶</span></button>
+        <button class="track-row" data-play="Satellite Heart"><span class="track-number">04</span><img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=100&q=80" alt="Ocean artwork"/><span class="track-meta"><b>Satellite Heart</b><small>Atlas Bloom</small></span><span class="track-tag">ALT POP</span><span class="track-duration">3:41</span><span class="track-play">▶</span></button>
+      </div></section>
+      <footer class="footer-note"><span>Made for the moments in between.</span><span>Soundwave UI concept · Built with HTML, CSS & JavaScript</span></footer>
+    </main>
+  </div>
+  <div class="player-bar" id="playerBar"><div class="now-playing"><div class="now-art" id="nowArt">♫</div><div class="now-meta"><b id="nowTitle">Choose your soundtrack</b><small id="nowArtist">Soundwave mix</small></div><button class="like-button" id="likeButton" aria-label="Like song">♡</button></div><div class="player-center"><div class="player-controls"><button id="shuffleButton" aria-label="Shuffle">⤨</button><button id="previousButton" aria-label="Previous track">|‹</button><button class="main-play" id="mainPlay" aria-label="Play">▶</button><button id="nextButton" aria-label="Next track">›|</button><button id="repeatButton" aria-label="Repeat">↻</button></div><div class="progress-row"><span id="currentTime">0:00</span><input type="range" id="progress" min="0" max="100" value="0" aria-label="Track progress"/><span id="totalTime">3:24</span></div></div><div class="player-extra"><button aria-label="Queue">☷</button><button aria-label="Connect device">▣</button><span class="volume-icon">◖</span><input type="range" id="volume" min="0" max="100" value="65" aria-label="Volume"/></div></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <dialog id="playlistDialog"><form method="dialog" class="dialog-card"><button class="dialog-close" aria-label="Close">×</button><p class="eyebrow">YOUR COLLECTION</p><h2>Create a playlist</h2><p>Give your next mood a name.</p><input id="playlistName" maxlength="30" placeholder="e.g. Sunday Reset" required/><div class="dialog-actions"><button class="cancel-button" value="cancel">Cancel</button><button class="primary-button" id="savePlaylist" value="default">Create playlist</button></div></form></dialog>
+</body>
+</html>
